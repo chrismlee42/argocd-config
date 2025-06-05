@@ -10,21 +10,21 @@ metadata:
   namespace: argocd
 spec:
   hostnames:
-  - argocd.service.clee.private.morphacy.net
-  - argocd.service.chris-pc.clee.private.morphacy.net
+    - argocd.service.clee.private.morphacy.net
+    - argocd.service.chris-pc.clee.private.morphacy.net
   parentRefs:
-  - group: gateway.networking.k8s.io
-    kind: Gateway
-    name: default
-    namespace: default
+    - group: gateway.networking.k8s.io
+      kind: Gateway
+      name: default
+      namespace: default
   rules:
-  - backendRefs:
-    - group: ""
-      kind: Service
-      name: argocd-server
-      port: 80
-      weight: 1
-    matches:
-    - path:
-        type: PathPrefix
-        value: /
+    - backendRefs:
+        - group: ""
+          kind: Service
+          name: argocd-server
+          port: 80
+          weight: 1
+      matches:
+        - path:
+            type: PathPrefix
+            value: /
