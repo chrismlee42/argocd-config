@@ -3,6 +3,9 @@ kind: Kustomization
 metadata:
   name: argocd-config
 
+commonAnnotations:
+  "helm.sh/resource-policy": keep
+
 commonLabels:
   app: argocd
   managedBy: argocd
