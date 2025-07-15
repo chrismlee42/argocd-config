@@ -15,38 +15,6 @@ commonLabels:
 namespace: argocd
 
 resources:
-  - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+  # Determine latest stable version from https://github.com/argoproj/argo-cd/releases
+  - https://raw.githubusercontent.com/argoproj/argo-cd/v3.0.11/manifests/install.yaml
   - httproute.yaml
-  - namespace.yaml
-  # - caching-redis-deployment.yaml
-  # - caching-redis-secret.yaml
-  # - caching-redis-service.yaml
-  # # - caching-redis-valkey.yaml
-  # # - housekeeping-cronjob.yaml
-  # - httproute.yaml
-  # - namespace.yaml
-  # - netbox-config-secret.yaml
-  # - netbox-configmap.yaml
-  # - netbox-deployment.yaml
-  # - netbox-horizontalpodautoscaler.yaml
-  # # - netbox-ingress.yaml
-  # - netbox-media-persistentvolumeclaim.yaml
-  # - netbox-reports-persistentvolumeclaim.yaml
-  # - netbox-role.yaml
-  # - netbox-rolebinding.yaml
-  # - netbox-scripts-persistentvolumeclaim.yaml
-  # - netbox-service.yaml
-  # - netbox-serviceaccount.yaml
-  # # - netbox-servicemonitor.yaml
-  # - netbox-superuser-secret.yaml
-  # - netbox-worker-deployment.yaml
-  # - netbox-worker-horizontalpodautoscaler.yaml
-  # - postgresql-certificate.yaml
-  # - postgresql-cluster.yaml
-  # # - postgresql-superuser-secret.yaml
-  # - postgresql-tls-secret.yaml
-  # # - postgresql-user-secret.yaml
-  # - tasks-redis-deployment.yaml
-  # - tasks-redis-secret.yaml
-  # - tasks-redis-service.yaml
-  # #- tasks-redis-valkey.yaml
