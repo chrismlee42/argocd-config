@@ -18,3 +18,4 @@ resources:
   # Determine latest stable version from https://github.com/argoproj/argo-cd/releases
   - https://raw.githubusercontent.com/argoproj/argo-cd/v3.0.11/manifests/install.yaml
   - httproute.yaml
+  - namespace.yaml
