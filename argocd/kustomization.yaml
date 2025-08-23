@@ -12,6 +12,13 @@ commonLabels:
   managementCodeGroup: chrismlee42
   managementCodeProject: argocd-config
 
+configMapGenerator:
+  - name: argocd-cm
+    behavior: merge
+    literals:
+      - accounts.ci="apiKey,login"
+      - url="https://argocd.service.clee.private.morphacy.net"
+
 namespace: argocd
 
 resources:
