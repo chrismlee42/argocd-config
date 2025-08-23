@@ -18,6 +18,13 @@ configMapGenerator:
     literals:
       - accounts.ci="apiKey,login"
       - url="https://argocd.service.clee.private.morphacy.net"
+  - name: argocd-cmd-params-cm
+    behavior: merge
+    literals:
+      - redis.compression="gzip"
+      - redis.server="argocd-redis:6379"
+      - server.enable.gzip="true"
+      - server.insecure="true"
 
 namespace: argocd
 
