@@ -9,7 +9,7 @@ commonAnnotations:
 commonLabels:
   app: argocd
   managedBy: argocd
-  managementCodeGroup: chrismlee42-dev
+  managementCodeGroup: chrismlee42
   managementCodeProject: argocd-config
 
 namespace: argocd
