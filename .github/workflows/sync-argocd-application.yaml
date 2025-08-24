@@ -1,4 +1,4 @@
-name: Sync ArgoCD Applications
+name: Sync argocd Application
 on:
   push:
     branches:
