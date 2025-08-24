@@ -6,12 +6,6 @@ metadata:
 commonAnnotations:
   "helm.sh/resource-policy": keep
 
-commonLabels:
-  app: argocd
-  managedBy: argocd
-  managementCodeGroup: chrismlee42
-  managementCodeProject: argocd-config
-
 configMapGenerator:
   - name: argocd-cm
     behavior: merge
@@ -25,6 +19,14 @@ configMapGenerator:
       - redis.server="argocd-redis:6379"
       - server.enable.gzip="true"
       - server.insecure="true"
+
+labels:
+  - includeSelectors: true
+    pairs:
+      app: argocd
+      managedBy: argocd
+      managementCodeGroup: chrismlee42
+      managementCodeProject: argocd-config
 
 namespace: argocd
 
