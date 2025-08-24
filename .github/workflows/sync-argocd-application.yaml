@@ -23,4 +23,4 @@ jobs:
           argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure --plaintext
 
       - name: Sync ArgoCD Applications
-        run: argocd app sync argocd/argocd-config
+        run: argocd app sync argocd/argocd
