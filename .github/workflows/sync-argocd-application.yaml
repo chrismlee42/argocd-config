@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 jobs:
   sync:
-    runs-on: gha-runners-argocd-config
+    runs-on: chris-pc-argocd
     steps:
       - name: Install ArgoCD CLI
         run: |
