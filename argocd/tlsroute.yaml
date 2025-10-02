@@ -1,0 +1,26 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: TLSRoute
+metadata:
+  name: argocd
+spec:
+  hostnames:
+    - argocd.service.clee.private.morphacy.net
+    - argocd.service.chris-pc.clee.private.morphacy.net
+  parentRefs:
+    - group: gateway.networking.k8s.io
+      kind: Gateway
+      name: tls-redirect
+      namespace: default
+      port: 443
+      sectionName: tls
+  rules:
+    - backendRefs:
+        - group: ""
+          kind: Service
+          name: argocd-server
+          port: 80
+          weight: 1
+      matches:
+        - path:
+            type: PathPrefix
+            value: /
