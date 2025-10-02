@@ -11,8 +11,8 @@ spec:
       kind: Gateway
       name: default
       namespace: default
-      port: 443
-      sectionName: https
+      # port: 443
+      # sectionName: https
   rules:
     - backendRefs:
         - group: ""
