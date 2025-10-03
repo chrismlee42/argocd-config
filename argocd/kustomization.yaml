@@ -18,7 +18,7 @@ configMapGenerator:
       - redis.compression="gzip"
       - redis.server="argocd-redis:6379"
       - server.enable.gzip="true"
-      - server.insecure="true"
+      - server.insecure="false"
   - name: argocd-rbac-cm
     behavior: merge
     literals:
@@ -42,6 +42,6 @@ namespace: argocd
 resources:
   # Determine latest stable version from https://github.com/argoproj/argo-cd/releases
   - https://raw.githubusercontent.com/argoproj/argo-cd/v3.1.4/manifests/install.yaml
-  - httproute.yaml
+  # - httproute.yaml
   - namespace.yaml
-  # - tlsroute.yaml
+  - tlsroute.yaml
