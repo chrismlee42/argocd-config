@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd
+  annotations:
+    ingress.cilium.io/force-https: enabled
+    ingress.cilium.io/tls-passthrough: enabled
+    ingress.cilium.io/websocket: enabled
+spec:
+  ingressClassName: cilium
+  rules:
+    - host: argocd.service.clee.private.morphacy.net
+      http:
+        paths:
+        - backend:
+            service:
+              name: argocd-server
+              port:
+                number: 443
+          path: /
+          pathType: Prefix
+    - host: argocd.service.chris-pc.clee.private.morphacy.net
+      http:
+        paths:
+        - backend:
+            service:
+              name: argocd-server
+              port:
+                number: 443
+          path: /
+          pathType: Prefix
+  tls:
+    - hosts:
+        - argocd.service.clee.private.morphacy.net
+        - argocd.service.chris-pc.clee.private.morphacy.net
+      secretName: clee-private-morphacy-net
