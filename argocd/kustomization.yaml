@@ -41,7 +41,8 @@ namespace: argocd
 
 resources:
   # Determine latest stable version from https://github.com/argoproj/argo-cd/releases
-  - https://raw.githubusercontent.com/argoproj/argo-cd/v3.1.4/manifests/install.yaml
+  - https://raw.githubusercontent.com/argoproj/argo-cd/v3.1.8/manifests/install.yaml
+  # - argocd-ingress.yaml
   - httproute.yaml
   - namespace.yaml
   # - tlsroute.yaml
